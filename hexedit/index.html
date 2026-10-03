@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HexEdit — 本地十六进制编辑器</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="row1">
+    <span class="logo">HexEdit</span>
+    <button id="btnOpen" title="打开本地文件（≤ 8 MB，不离开浏览器）">打开文件…</button>
+    <button id="btnNew">新建</button>
+    <button id="btnDemo">示例文件</button>
+    <input type="file" id="fileInput" hidden>
+    <span class="sep"></span>
+    <button id="btnUndo" title="Ctrl+Z">撤销</button>
+    <button id="btnRedo" title="Ctrl+Y / Ctrl+Shift+Z">重做</button>
+    <span class="sep"></span>
+    <button id="btnExport" title="导出当前内容并计算 SHA-256（Ctrl+S）">导出</button>
+    <span id="exportInfo"></span>
+  </div>
+  <div class="row2">
+    <select id="searchMode">
+      <option value="hex">十六进制</option>
+      <option value="text">文本 (UTF-8)</option>
+    </select>
+    <input id="searchInput" type="text" placeholder="查找字节，如 DE AD BE EF（回车搜索）" spellcheck="false" autocomplete="off">
+    <button id="btnSearch">搜索</button>
+    <button id="btnPrev">上一个</button>
+    <button id="btnNext">下一个</button>
+    <input id="replaceInput" type="text" placeholder="替换为…" spellcheck="false" autocomplete="off">
+    <button id="btnReplaceAll" disabled title="仅当搜索结果未过期时可用">全部替换</button>
+    <span id="hitsInfo"></span>
+  </div>
+</header>
+<div id="hexview" tabindex="0"></div>
+<footer>
+  <span id="stFile"></span>
+  <span id="stLen"></span>
+  <span id="stCaret"></span>
+  <span id="stSel"></span>
+  <span id="stMode"></span>
+  <span id="stRev"></span>
+</footer>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

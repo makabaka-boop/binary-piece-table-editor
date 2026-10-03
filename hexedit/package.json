@@ -1,0 +1,10 @@
+{
+  "name": "hexedit",
+  "private": true,
+  "type": "module",
+  "description": "浏览器本地十六进制编辑器：片段表编辑模型 / Worker 搜索 / 快照导出",
+  "scripts": {
+    "test": "node test/run.mjs",
+    "serve": "python3 -m http.server 8080"
+  }
+}
