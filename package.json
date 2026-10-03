@@ -1,0 +1,11 @@
+{
+  "name": "hex-editor",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "浏览器本地二进制十六进制编辑器：片段表编辑模型 + 虚拟滚动 + Worker 搜索 + 快照导出",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python3 -m http.server 8080"
+  }
+}

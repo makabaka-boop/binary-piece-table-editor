@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>HexEdit — 本地二进制编辑器</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <button id="openBtn" title="打开本地文件（≤ 8 MiB）">打开文件</button>
+  <input id="fileInput" type="file" hidden>
+  <button id="newBtn" title="新建空文档">新建</button>
+  <span id="fileInfo">未命名 · 0 字节</span>
+  <span class="spacer"></span>
+  <button id="undoBtn" disabled>↶ 撤销</button>
+  <button id="redoBtn" disabled>↷ 重做</button>
+  <button id="modeBtn" title="切换 插入/覆盖（Insert 键）">覆盖</button>
+  <button id="exportBtn" title="导出当前文件并计算 SHA-256">导出</button>
+</header>
+
+<div id="searchBar">
+  <input id="searchInput" type="text" spellcheck="false"
+         placeholder="搜索十六进制，如 DE AD BE EF（回车下一个）">
+  <button id="findPrevBtn" title="上一个 (Shift+Enter)">↑</button>
+  <button id="findNextBtn" title="下一个 (Enter)">↓</button>
+  <span id="searchInfo"></span>
+  <input id="replaceInput" type="text" spellcheck="false" placeholder="替换为（十六进制）">
+  <button id="replaceAllBtn" disabled>全部替换</button>
+  <span id="digest"></span>
+</div>
+
+<div id="viewport" tabindex="0">
+  <div id="spacer"><div id="rows"></div></div>
+</div>
+
+<footer>
+  <span id="status"></span>
+  <span class="hint">方向键移动 · Shift 扩展选区 · 0-9a-f 输入半字节 · Tab 切 ASCII 输入 · Insert 切模式 · Ctrl+Z/Y 撤销重做</span>
+</footer>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
